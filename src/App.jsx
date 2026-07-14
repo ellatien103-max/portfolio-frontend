@@ -225,7 +225,7 @@ function App() {
             <footer>
               <div className="footer-links">
                 <a href="https://instagram.com/isabel_atieno" target="_blank" rel="noreferrer">Instagram</a>
-                <a href="www.linkedin.com/in/isabella-atieno-88369b2b3" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/isabella-atieno-88369b2b3" target="_blank" rel="noreferrer">LinkedIn</a>
                 <a href="https://github.com/ellatien103-max" target="_blank" rel="noreferrer">GitHub</a>
                 <a href="https://wittracker.com" target="_blank" rel="noreferrer">WIT Tracker</a>
                 <button
