@@ -13,26 +13,27 @@ function Navbar({ isDark, toggleDark }) {
         Isabella Atieno
       </a>
 
-      <button
-        className="menu-toggle"
-        onClick={() => setMenuOpen(prev => !prev)}
-        aria-label="Toggle menu"
-      >
-        {menuOpen ? '✕' : '☰'}
-      </button>
-
-      <div className={menuOpen ? 'nav-right nav-open' : 'nav-right'}>
-        <ul className="nav-links">
-          <li><a href="#home" onClick={closeMenu}>Home</a></li>
-          <li><a href="#about" onClick={closeMenu}>About</a></li>
-          <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
-          <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
-          <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-        </ul>
+      <div className="navbar-controls">
         <button className="dark-toggle" onClick={toggleDark}>
           {isDark ? '☀️ Light' : '🌙 Dark'}
         </button>
+
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(prev => !prev)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? '✕' : '☰'}
+        </button>
       </div>
+
+      <ul className={menuOpen ? 'nav-links nav-open' : 'nav-links'}>
+        <li><a href="#home" onClick={closeMenu}>Home</a></li>
+        <li><a href="#about" onClick={closeMenu}>About</a></li>
+        <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
+        <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
+        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+      </ul>
     </nav>
   );
 }
