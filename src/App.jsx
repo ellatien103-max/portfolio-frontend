@@ -236,8 +236,7 @@ function App() {
                 </button>
               </div>
               <p>
-                Built by <strong>{portfolio.name}</strong> · React + Node.js +
-                Supabase · Deployed on Vercel & Render
+              <strong>{portfolio.name}</strong>
               </p>
             </footer>
           </>
