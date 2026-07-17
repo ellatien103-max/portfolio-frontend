@@ -958,7 +958,28 @@ footer strong {
 /* ══════════════════════════════════════
    MOBILE NAV MENU
 ══════════════════════════════════════ */
+.nav-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.75rem;
+  flex: 1;
+}
+
+.nav-links {
+  order: 1;
+  display: flex;
+  gap: 1.75rem;
+  list-style: none;
+}
+
+.dark-toggle {
+  order: 2;
+}
+
 .menu-toggle {
+  order: 3;
   display: none;
   background: none;
   border: none;
@@ -968,41 +989,35 @@ footer strong {
   padding: 4px 8px;
 }
 
-.navbar-controls {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 @media (max-width: 700px) {
-  .navbar {
-    flex-wrap: wrap;
-    position: relative;
+  .nav-right {
+    gap: 12px;
+  }
+
+  .dark-toggle {
+    order: 1;
   }
 
   .menu-toggle {
+    order: 2;
     display: block;
   }
 
-  .nav-right {
-    display: none;
-  }
-
   .nav-links {
+    order: 3;
     flex-basis: 100%;
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
     max-height: 0;
     overflow: hidden;
-    padding: 0 1.5rem;
-    margin-top: 0;
+    padding: 0;
     transition: max-height 0.3s ease, padding 0.3s ease;
   }
 
   .nav-links.nav-open {
     max-height: 400px;
-    padding: 1rem 1.5rem 1.25rem;
+    padding: 1rem 0 1.25rem;
   }
 
   .nav-links li {
