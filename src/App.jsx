@@ -21,7 +21,9 @@ function getDaysBuilding() {
 
 function App() {
   // ── STATE ──
-  const [isDark, setIsDark] = useState(false);
+ const [isDark, setIsDark] = useState(
+  localStorage.getItem('theme') === 'dark'
+);
   const [portfolio, setPortfolio] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -33,10 +35,14 @@ function App() {
 // trigger deploy
  
   // ── DARK MODE ──
-  function toggleDark() {
-    setIsDark(prev => !prev);
-    document.body.classList.toggle('dark');
-  }
+ function toggleDark() {
+  setIsDark(prev => {
+    const next = !prev;
+    localStorage.setItem('theme', next ? 'dark' : 'light');
+    document.body.classList.toggle('dark', next);
+    return next;
+  });
+}
 
   // ── FETCH PORTFOLIO FROM API ──
   useEffect(() => {
@@ -51,6 +57,10 @@ function App() {
         setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+  document.body.classList.toggle('dark', isDark);
+}, [isDark]);
 
   // ── GREETING BAR ──
   useEffect(() => {
